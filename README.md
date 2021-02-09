@@ -1,2 +1,2 @@
 # GameOldSnake
- Game Snale project
+ Game Snake project

@@ -4,6 +4,8 @@ window.onload = function(){
     var stage = document.getElementById('stage');
     var ctx = stage.getContext("2d"); 
 
+    document.addEventListener("keydown", keyPush)
+
     setInterval(game, 1000/15); 
 
     const vel = 1;      // velocidade da peca
@@ -15,7 +17,7 @@ window.onload = function(){
     var ax = ay = 15;   // posicao inicial da maçã
 
     var trail = []      // rastro
-    var tail = 5        // tamanho da cauda inicial
+    var tail = 1        // tamanho da cauda inicial
 
     function game(){
 
@@ -45,7 +47,47 @@ window.onload = function(){
 
         ctx.fillStyle = "gray"
         for(let i = 0; i < trail.length; i++){
+            ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp-1,tp-1)   
             
+            if (trail[i].x == px && trail[i].y == py){
+                vx = vy = 0 
+                tail=1
+
+            }
+        }
+        trail.push({x:px,y:py})
+        while(trail.length > tail){
+            trail.shift()
+        }
+        if(ax==px && ay==py){
+            tail++
+            ax = Math.floor(Math.random()*qp)
+            ay = Math.floor(Math.random()*qp)
+        }
+
+    }
+
+    function keyPush(event){
+        switch (event.keyCode) {
+            case 37:        //left
+                vx= -vel
+                vy = 0
+                break;
+            case 38:        //up
+                vx= 0
+                vy = -vel
+                break;
+            case 39:        //right
+                vx= vel
+                vy = 0
+                break;
+            case 40:        //down
+                vx= 0
+                vy = vel
+                break;
+        
+            default:
+                break;
         }
 
     }

@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(224, 196, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+body h1{
+    text-decoration: underline;    
+}
+div{
+    text-align: center;
+}
+canvas#stage{
+    box-shadow: 5px 5px 8px black;
+    border-radius: 15px;
+    padding: 3px;
+}

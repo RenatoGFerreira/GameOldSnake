@@ -39,13 +39,13 @@ window.onload = function(){
 
 
     //Aqui está a coloração do palco principal
-    ctx.fillStyle = "black"
+    ctx.fillStyle = "White"
     ctx.fillRect(0,0, stage.width, stage.height)
 
-        ctx.fillStyle = "Red"
+        ctx.fillStyle = "rgb(224,6,0)"
         ctx.fillRect(ax*tp, ay*tp, tp,tp)
 
-        ctx.fillStyle = "gray"
+        ctx.fillStyle = "black"
         for(let i = 0; i < trail.length; i++){
             ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp-1,tp-1)   
             

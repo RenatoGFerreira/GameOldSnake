@@ -3,6 +3,7 @@ window.onload = function(){
 
     var stage = document.getElementById('stage');
     var ctx = stage.getContext("2d"); 
+    var pontos = document.getElementById('resp')
 
     document.addEventListener("keydown", keyPush)
 
@@ -10,14 +11,13 @@ window.onload = function(){
 
     const vel = 1;      // velocidade da peca
     var vx = vy = 0;    // velocidade do início
-    var px = 10;        // comeco do ponto?
-    var py = 15;        // comeco do ponto?
-    var tp = 20;        // tamanho da peça 20x20
+    var px = 10;        // comeco do ponto, Orientação horizontal.
+    var py = 10;        // comeco do ponto, Orientação vertical.
+    var tp = 20;        // tamanho da peça "20x20"
     var qp = 20;        // quantidade de pecas do tabuleiro
-    var ax = ay = 15;   // posicao inicial da maçã
-
+    var ax = ay = 15;   // posicao inicial da maçã horizontal e vertical
     var trail = []      // rastro
-    var tail = 1        // tamanho da cauda inicial
+    var tail = 1        // tamanho inicial da Snake 
 
     function game(){
 
@@ -42,7 +42,7 @@ window.onload = function(){
     ctx.fillStyle = "White"
     ctx.fillRect(0,0, stage.width, stage.height)
 
-        ctx.fillStyle = "rgb(224,6,0)"
+        ctx.fillStyle = "rgb(224,6,0)"  //Um tom de vermelho
         ctx.fillRect(ax*tp, ay*tp, tp,tp)
 
         ctx.fillStyle = "black"
@@ -52,7 +52,6 @@ window.onload = function(){
             if (trail[i].x == px && trail[i].y == py){
                 vx = vy = 0 
                 tail=1
-
             }
         }
         trail.push({x:px,y:py})
@@ -63,8 +62,8 @@ window.onload = function(){
             tail++
             ax = Math.floor(Math.random()*qp)
             ay = Math.floor(Math.random()*qp)
+            pontos.innerHTML = `pontos: ${tail-1}`
         }
-
     }
 
     function keyPush(event){
@@ -89,9 +88,6 @@ window.onload = function(){
             default:
                 break;
         }
-
     }
-
-
 
 }

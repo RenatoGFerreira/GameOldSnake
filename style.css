@@ -14,3 +14,10 @@ canvas#stage{
     border-radius: 15px;
     padding: 3px;
 }
+footer{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-transform: none;
+}
+

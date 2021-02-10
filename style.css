@@ -17,7 +17,8 @@ canvas#stage{
 footer{
     background-color: black;
     color: white;
-    text-decoration: none;
     text-transform: none;
+    text-align: center;
+    margin: 10px -20px -20px -20px;
+    padding: 5px;
 }
-

@@ -95,14 +95,14 @@ footer{
 }
 #menu ul a{
     padding: 10px;
-    width: 130px;
+    width: 140px;
     display: block;
     white-space: nowrap;
     float: none;
     text-transform: uppercase;
 }
 #menu ul a:hover{
-    background-color: #E04818;
+    background-color: #7c73fd;
 }
 #menu ul li:first-child > a{
     border-radius: 3px 3px 0 0;
@@ -136,3 +136,11 @@ menu ul li:last-child > a{
     border-radius: 0 0 3px 3px;
 }
 
+/* Até aqui corresponde ao menu principal*/
+
+
+header{
+    background-color: #4e41fc;
+    width: auto;
+    margin: -50px -15px 5px -15px;   
+}
